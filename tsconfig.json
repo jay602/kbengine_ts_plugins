@@ -12,6 +12,8 @@
     "files": [
         "Dbg.ts",
         "Event.ts",
+        "KBEngineArgs.ts",
+        "NetworkInterface.ts",
         "KBEngine.ts",
         "test.ts",
     ]

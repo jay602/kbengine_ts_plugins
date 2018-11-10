@@ -11,7 +11,7 @@ namespace KBEngine
 		NOLOG,  // 放在最后面，使用这个时表示不输出任何日志（!!!慎用!!!）
     }
     
-    export class Ddb
+    export class Dbg
     {
         public static debugLevel:DEBUGLEVEL = DEBUGLEVEL.DEBUG;
 

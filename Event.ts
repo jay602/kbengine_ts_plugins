@@ -36,7 +36,7 @@ namespace KBEngine
 
             if(callbackfn == undefined)
             {
-                Ddb.ERROR_MSG('KBEngine.Event::fire: not found strCallback(' + classinst  + ")!"+strCallback);
+                Dbg.ERROR_MSG('KBEngine.Event::fire: not found strCallback(' + classinst  + ")!"+strCallback);
                 return;
             }
 
@@ -64,7 +64,7 @@ namespace KBEngine
             let evtlst: Array<EventInfo> = this._events[evtName];
             if(evtlst == undefined)
             {
-                Ddb.ERROR_MSG("Event::deregister:cant find event by name(%s).", evtName);
+                Dbg.ERROR_MSG("Event::deregister:cant find event by name(%s).", evtName);
                 return;
             }
 
@@ -94,7 +94,7 @@ namespace KBEngine
             let evtlst: Array<EventInfo> = this._events[evtName];
             if(evtlst == undefined)
             {
-                Ddb.ERROR_MSG("Event::Fire:cant find event by name(%s).", evtName);
+                Dbg.ERROR_MSG("Event::Fire:cant find event by name(%s).", evtName);
                 return;
             }
 
@@ -115,7 +115,7 @@ namespace KBEngine
                 }
                 catch(e)
                 {
-                    Ddb.ERROR_MSG("Event::Fire(%s):%s", evtName, e);
+                    Dbg.ERROR_MSG("Event::Fire(%s):%s", evtName, e);
                 }
             }
         }
@@ -124,19 +124,19 @@ namespace KBEngine
         {
             this._isPause = true;
         }
-        
+
         static resume(): void
         {
             this._isPause = false;
 
             let firedEvents: Array<FiredEvent> = this._firedEvents;
-            Ddb.INFO_MSG("resume");
+            Dbg.INFO_MSG("resume");
             while(firedEvents.length > 0)
             {
                 var evt = firedEvents.shift();
                 var info = evt.evtInfo;
                 var args = evt.args;
-                Ddb.INFO_MSG("resume evtname: " + evt.evtName);
+                Dbg.INFO_MSG("resume evtname: " + evt.evtName);
                 if(args.length < 1)
                 {
                     info.callbackfn.apply(info.classinst);

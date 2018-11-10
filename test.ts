@@ -21,3 +21,7 @@ KBEngine.Event.pause();
 KBEngine.Event.fire("test", "hklj");
 //KBEngine.Event.deregister("test", a);
 KBEngine.Event.resume();
+
+let args = new KBEngine.KBEngineArgs();
+args.address = "localhost";
+let app = new KBEngine.KBEngineApp(args);
