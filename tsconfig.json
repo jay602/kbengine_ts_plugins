@@ -10,6 +10,7 @@
     },
 
     "files": [
+        "Dbg.ts",
         "Event.ts",
         "KBEngine.ts",
         "test.ts",

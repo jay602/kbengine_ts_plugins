@@ -21,7 +21,7 @@ namespace KBEngine
 
             if(callbackfn == undefined)
             {
-                console.error('KBEngine.Event::fire: not found strCallback(' + classinst  + ")!"+strCallback);
+                Ddb.ERROR_MSG('KBEngine.Event::fire: not found strCallback(' + classinst  + ")!"+strCallback);
                 return;
             }
 
@@ -42,7 +42,7 @@ namespace KBEngine
             let evtlst: Array<EventInfo> = this._events[evtName];
             if(evtlst == undefined)
             {
-                console.error("Event::deregister:cant find event by name(%s).", evtName);
+                Ddb.ERROR_MSG("Event::deregister:cant find event by name(%s).", evtName);
                 return;
             }
 
@@ -70,7 +70,7 @@ namespace KBEngine
             let evtList: Array<EventInfo> = this._events[evtName];
             if(evtList == undefined)
             {
-                console.error("Event::Fire:cant find event by name(%s).", evtName);
+                Ddb.ERROR_MSG("Event::Fire:cant find event by name(%s).", evtName);
                 return;
             }
 
@@ -82,7 +82,7 @@ namespace KBEngine
                 }
                 catch(e)
                 {
-                    console.error("Event::Fire(%s):%s", evtName, e);
+                    Ddb.ERROR_MSG("Event::Fire(%s):%s", evtName, e);
                 }
             }
         }
