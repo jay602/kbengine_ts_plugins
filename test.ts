@@ -9,16 +9,15 @@ class Test
         this.b = b;
     }
 
-    say() {
-        console.log("hello world");
+    say(msg: string) {
+        console.log(msg);
     }
 }
 
 let a = new Test("1", "2");
 KBEngine.Event.register("test", a, "say");
 //KBEngine.Event.deregister("test", a);
-KBEngine.Event.fire("test");
-var b = 100;
-KBEngine.Ddb.DEBUG_MSG("error %d", b)
-let t = KBEngine.Ddb.getHead();
-console.log(t);
+KBEngine.Event.pause();
+KBEngine.Event.fire("test", "hklj");
+//KBEngine.Event.deregister("test", a);
+KBEngine.Event.resume();
