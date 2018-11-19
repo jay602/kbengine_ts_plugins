@@ -11,6 +11,7 @@
 
     "files": [
         "Dbg.ts",
+        "EventTypes.ts",
         "Event.ts",
         "KBEngineArgs.ts",
         "NetworkInterface.ts",
